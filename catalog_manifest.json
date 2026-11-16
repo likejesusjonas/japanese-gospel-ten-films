@@ -3,9 +3,8 @@
     {
       "episode": 1,
       "title_ja": "クリスマス、愛が私たちのもとに",
-      "title_ko": "크리스마스, 사랑이 우리에게 오다",
       "duration": 63.541667,
-      "summary": "크리스마스는 휴일과 선물, 빨간 장식뿐인 날일까요?",
+      "summary": "クリスマスはイエスの誕生を記念する日。飼い葉おけに寝かされたイエスに示された神の愛と、毎日に灯る希望を紹介します。",
       "src": "media/EP01.mp4",
       "poster": "thumbnails/EP01.jpg",
       "sha256": "ebe26ca2ef8a8c8e55940c2d3e3fb4cf12493b37ed79b37337453492bd9b72a1",
@@ -14,9 +13,8 @@
     {
       "episode": 2,
       "title_ja": "教会って、どんなところ？",
-      "title_ko": "교회는 어떤 곳일까요?",
       "duration": 62.916667,
-      "summary": "교회는 그저 건물을 말하는 걸까요?",
+      "summary": "教会は建物でも完璧な人の集まりでもなく、イエスに従うことを学ぶ人たちの共同体。疑問を抱えたままでも歓迎されることを伝えます。",
       "src": "media/EP02.mp4",
       "poster": "thumbnails/EP02.jpg",
       "sha256": "3af788bcf9f2064de73de1429288e7995cb99f73f804ee6ba275193e69b30c9f",
@@ -25,9 +23,8 @@
     {
       "episode": 3,
       "title_ja": "イエスとは、どんな方？",
-      "title_ko": "예수님은 어떤 분일까요?",
       "duration": 70.416667,
-      "summary": "예수님은 그저 좋은 선생님일까요?",
+      "summary": "クリスチャンが信じる「神の子」「救い主」としてのイエス。その意味と、十字架と復活によって開かれた神との和解の道を紹介します。",
       "src": "media/EP03.mp4",
       "poster": "thumbnails/EP03.jpg",
       "sha256": "729be40325f395944f017cc8d71ac7bcdf7fe12d0e644c1afdb0e1d98d9d1a6e",
@@ -36,9 +33,8 @@
     {
       "episode": 4,
       "title_ja": "成果で得るのではない愛",
-      "title_ko": "성과로 얻지 않는 사랑",
       "duration": 67.75,
-      "summary": "잘하지 못해도 사랑받을 가치가 있을까요?",
+      "summary": "神の愛は優れた人へのごほうびではありません。弱さを知りながら先に近づいてくださる神の恵みと、新しい生き方への招きを語ります。",
       "src": "media/EP04.mp4",
       "poster": "thumbnails/EP04.jpg",
       "sha256": "8798121f6324f6c70e78e6063651488a9bc8c85d07bc93e3ff0ea1f9cf38425f",
@@ -47,9 +43,8 @@
     {
       "episode": 5,
       "title_ja": "罪は悪い行いだけではない",
-      "title_ko": "죄는 나쁜 행동만이 아닙니다",
       "duration": 65.541667,
-      "summary": "'죄'라는 말을 들으면 무엇이 떠오르나요?",
+      "summary": "聖書が語る罪は、悪い行いだけでなく神から離れた心の向きのこと。罪を認めるとは、救いが必要だと正直に認めることです。",
       "src": "media/EP05.mp4",
       "poster": "thumbnails/EP05.jpg",
       "sha256": "00182fa59e063a4b720ef965feabe20ff9c75a80e0d5d50a62e1a6651285469a",
@@ -58,9 +53,8 @@
     {
       "episode": 6,
       "title_ja": "十字架と赦し",
-      "title_ko": "십자가와 용서",
       "duration": 70.875,
-      "summary": "그리스도인은 왜 십자가를 소중히 여길까요?",
+      "summary": "罪のないイエスが、私たちの罪のために死なれた十字架。そこに示された神の正義と愛、そして赦しと和解について紹介します。",
       "src": "media/EP06.mp4",
       "poster": "thumbnails/EP06.jpg",
       "sha256": "f9259f19fdeaaac27d14144fe0eee7c771fdc92cd5acbcd2bae058c18a414e5d",
@@ -69,9 +63,8 @@
     {
       "episode": 7,
       "title_ja": "復活がくれる希望",
-      "title_ko": "부활이 주는 소망",
       "duration": 70.25,
-      "summary": "부활은 그저 마음의 위로일까요?",
+      "summary": "復活は心のなぐさめだけではありません。イエスが本当に死からよみがえったという信仰と、暗闇の中で与えられる希望を伝えます。",
       "src": "media/EP07.mp4",
       "poster": "thumbnails/EP07.jpg",
       "sha256": "5584bac685ca744adaa688f328a8f23a2d330f98996e4f695c6c16c1305162b5",
@@ -80,9 +73,8 @@
     {
       "episode": 8,
       "title_ja": "祈りはおまじないではない",
-      "title_ko": "기도는 주문이 아닙니다",
       "duration": 66.75,
-      "summary": "기도는 소원을 여러 번 되풀이하는 것일까요? 아닙니다.",
+      "summary": "祈りは願いをかなえるおまじないではなく、神に心を開く誠実な対話。どう始めればよいか分からない方への最初の一歩も紹介します。",
       "src": "media/EP08.mp4",
       "poster": "thumbnails/EP08.jpg",
       "sha256": "83798f839baaf0f0436636d9ac9f38e60b50ccb7f8f33c18ca5d6700f257cff0",
@@ -91,9 +83,8 @@
     {
       "episode": 9,
       "title_ja": "信じていても、つらいことはある",
-      "title_ko": "믿음이 있어도 어려움은 있습니다",
       "duration": 73.916667,
-      "summary": "예수님을 믿으면 고통 없는 삶이 될까요?",
+      "summary": "信じていても苦しみがなくなるわけではありません。苦難の中でもイエスを信頼し、一人ではないと知る希望と、助けを求める大切さを語ります。",
       "src": "media/EP09.mp4",
       "poster": "thumbnails/EP09.jpg",
       "sha256": "04f77f3cf4566a60dd5627313eb24a72d5dd83571975bd649a4e40d8dc92012c",
@@ -102,17 +93,14 @@
     {
       "episode": 10,
       "title_ja": "イエスを、どこから知っていけばいい？",
-      "title_ko": "예수님을 어디서부터 알아갈까요?",
       "duration": 75.833333,
-      "summary": "예수님을 알고 싶다면, 어디서 시작하면 될까요?",
+      "summary": "イエスを知る第一歩として、マルコの福音書などの短い箇所を読むこと、正直に祈ること、教会でゆっくり質問することを紹介します。",
       "src": "media/EP10.mp4",
       "poster": "thumbnails/EP10.jpg",
       "sha256": "5ead9996ed0e061ff0e1dc678fcc36a5e1d7b2806c164baa25219d69dc8effb1",
       "bytes": 28599895
     }
   ],
-  "release_type": "public_review_copy",
-  "direct_listening_completed": false,
-  "native_japanese_approval": false,
-  "final_content_approval": false
+  "release_type": "public",
+  "language": "ja"
 }

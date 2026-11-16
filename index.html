@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' file: data:; media-src 'self' file:; connect-src 'none'; font-src 'none'; form-action 'none'; base-uri 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="robots" content="noindex, nofollow">
-<title>일본어 복음 소개 영상 10편 · 공개 검토용 검토 카탈로그</title>
+<meta name="description" content="キリスト教の福音を、はじめての方にもわかりやすく紹介する約1分のショート動画、全10話。">
+<title>福音紹介ショート 全10話｜はじめての方へ</title>
 <style>
   :root {
     --cream: #f6f1e7;
@@ -18,11 +18,9 @@
     --line: #d9cfbe;
     --accent: #8a5a2b;
     --focus: #1f5fbf;
-    --warn-bg: #2a2826;
-    --warn-fg: #fbf3df;
     --radius: 10px;
-    --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Apple SD Gothic Neo", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans KR", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Malgun Gothic", system-ui, sans-serif;
-    --serif: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
+    --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic UI", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+    --serif: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
@@ -32,12 +30,12 @@
     color: var(--charcoal);
     font-family: var(--sans);
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.7;
     overflow-x: hidden;
-    word-break: keep-all;
+    word-break: normal;
+    line-break: strict;
     overflow-wrap: anywhere;
   }
-  :lang(ja) { word-break: normal; line-break: strict; }
   .skip {
     position: absolute; left: -9999px; top: 0;
     background: var(--charcoal); color: var(--paper);
@@ -46,37 +44,38 @@
   .skip:focus { left: 8px; top: 8px; }
   :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
-  .banner {
-    background: var(--warn-bg);
-    color: var(--warn-fg);
-    padding: 12px max(16px, env(safe-area-inset-left));
-    text-align: center;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.01em;
-    border-bottom: 3px solid var(--accent);
-  }
-  .banner span[aria-hidden] { margin-right: 6px; }
-
   .wrap { max-width: 1200px; margin: 0 auto; padding: 20px 16px 48px; }
 
   header.masthead {
     border-bottom: 2px solid var(--charcoal);
-    padding-bottom: 14px;
+    padding-bottom: 16px;
     margin-bottom: 20px;
   }
   .kicker {
-    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.82rem; letter-spacing: 0.1em;
     color: var(--muted); margin: 0 0 4px;
   }
   h1 {
     font-family: var(--serif);
     font-weight: 700;
-    font-size: clamp(1.5rem, 4.5vw, 2.3rem);
-    line-height: 1.25;
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    line-height: 1.3;
     margin: 0;
   }
-  .sub { margin: 6px 0 0; color: var(--charcoal-2); font-size: 0.95rem; }
+  .sub { margin: 8px 0 0; color: var(--charcoal-2); font-size: 0.98rem; max-width: 46em; }
+
+  .guide {
+    margin: 14px 0 0;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    max-width: 46em;
+  }
+  .guide h2 { margin: 0 0 4px; font-size: 0.95rem; font-weight: 700; }
+  .guide ol { margin: 0; padding-left: 1.4em; color: var(--charcoal-2); font-size: 0.93rem; }
+  .guide li + li { margin-top: 2px; }
 
   .layout {
     display: grid;
@@ -113,17 +112,16 @@
     background: var(--charcoal);
   }
   .now { margin-top: 14px; min-width: 0; }
-  .now .ep-no { font-size: 0.8rem; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; margin: 0; }
+  .now .ep-no { font-size: 0.85rem; color: var(--accent); font-weight: 700; letter-spacing: 0.06em; margin: 0; }
   .now h2 {
     font-family: var(--serif);
-    font-size: 1.3rem; line-height: 1.4; margin: 2px 0 0;
+    font-size: 1.3rem; line-height: 1.45; margin: 2px 0 0;
   }
-  .now .ko { margin: 2px 0 0; color: var(--charcoal-2); font-weight: 600; }
   .now .sum { margin: 8px 0 0; color: var(--charcoal-2); }
   .now .meta { margin: 6px 0 0; color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; }
   .media-err {
     margin: 10px 0 0; padding: 10px 12px; border-radius: 8px;
-    background: #f3e2d6; color: #5a2e14; font-size: 0.9rem;
+    background: #f3e2d6; color: #5a2e14; font-size: 0.92rem;
   }
   .media-err[hidden] { display: none; }
 
@@ -145,7 +143,7 @@
 
   .catalog { min-width: 0; }
   .search-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-  .search-row label { font-weight: 700; font-size: 0.9rem; }
+  .search-row label { font-weight: 700; font-size: 0.92rem; }
   .search-box { display: flex; gap: 8px; }
   #search {
     flex: 1 1 auto; min-width: 0;
@@ -158,7 +156,7 @@
     border-radius: 8px;
   }
   #search:focus { border-color: var(--charcoal); }
-  #clear { flex: 0 0 auto; min-width: 44px; }
+  #clear { flex: 0 0 auto; min-width: 44px; padding: 10px 12px; }
   .count { margin: 0 0 10px; color: var(--muted); font-size: 0.88rem; }
 
   ol.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -192,15 +190,14 @@
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .ep-body { min-width: 0; display: block; }
   .ep-top { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
-  .ep-num { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
-  .ep-dur { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .ep-ja { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.05rem; line-height: 1.4; margin-top: 2px; }
-  .ep-ko { display: block; font-weight: 600; font-size: 0.92rem; color: var(--charcoal-2); }
-  .ep-sum { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+  .ep-num { font-size: 0.82rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
+  .ep-dur { font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ep-ja { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.05rem; line-height: 1.45; margin-top: 2px; }
+  .ep-sum { display: block; font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
   .empty { padding: 20px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
   .empty[hidden] { display: none; }
 
-  footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; }
+  footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
 
   @media (max-width: 420px) {
     .wrap { padding: 16px 12px 40px; }
@@ -211,18 +208,22 @@
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
-<body><div style="padding:16px;background:#422b18;color:#fff;text-align:center">공개 검토본 · 직접 청취 및 일본어 원어민 최종 승인은 아직 완료되지 않았습니다. / レビュー用・音声の最終確認は未完了です。</div>
-<a class="skip" href="#catalog">에피소드 목록으로 건너뛰기</a>
-
-<div class="banner" role="note" aria-label="검토 상태 안내">
-  <span aria-hidden="true">⚠</span>공개 검토용 검토용 · 전편 직접 청취 및 일본어 원어민 발음 검수 미완료 · 공개 승인 없음
-</div>
+<body>
+<a class="skip" href="#catalog">エピソード一覧へ移動</a>
 
 <div class="wrap">
   <header class="masthead">
-    <p class="kicker">Private Review · Offline Catalog</p>
-    <h1><span lang="ja">福音紹介ショート</span> · 일본어 복음 소개 영상 10편</h1>
-    <p class="sub">로컬 파일로만 열어 보는 내부 검토 카탈로그입니다. 영상과 썸네일은 이 문서 기준 상대 경로(media/, thumbnails/)에서 불러옵니다.</p>
+    <p class="kicker">はじめての方へ · 全10話</p>
+    <h1>福音紹介ショート</h1>
+    <p class="sub">キリスト教の福音を、はじめての方にもわかりやすく紹介する1分ほどの短い動画です。クリスマスや教会、イエス、祈りなど、身近な疑問から順番にお届けします。</p>
+    <section class="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">動画の見かた</h2>
+      <ol>
+        <li>一覧から見たいエピソードを選びます。</li>
+        <li>動画の再生ボタンを押すと再生が始まります（自動では再生されません）。</li>
+        <li>ナレーションは日本語で、日本語と韓国語の字幕が付いています。</li>
+      </ol>
+    </section>
   </header>
 
   <main class="layout">
@@ -233,34 +234,33 @@
       <p class="media-err" id="media-err" role="alert" hidden></p>
       <div class="now" aria-live="polite">
         <p class="ep-no" id="now-no"></p>
-        <h2 id="now-title" lang="ja"></h2>
-        <p class="ko" id="now-ko"></p>
+        <h2 id="now-title"></h2>
         <p class="sum" id="now-sum"></p>
         <p class="meta" id="now-meta"></p>
       </div>
       <div class="nav">
-        <button type="button" class="btn" id="prev" aria-label="이전 에피소드">← 이전</button>
-        <button type="button" class="btn" id="next" aria-label="다음 에피소드">다음 →</button>
+        <button type="button" class="btn" id="prev">← 前の話</button>
+        <button type="button" class="btn" id="next">次の話 →</button>
       </div>
     </section>
 
     <section class="catalog" id="catalog" aria-labelledby="catalog-title" tabindex="-1">
-      <h2 id="catalog-title" class="kicker">에피소드 목록</h2>
+      <h2 id="catalog-title" class="kicker">エピソード一覧</h2>
       <div class="search-row" role="search">
-        <label for="search">검색 (일본어 · 한국어 제목, 요약, 회차 번호)</label>
+        <label for="search">タイトル・内容・話数で検索</label>
         <div class="search-box">
-          <input type="search" id="search" autocomplete="off" spellcheck="false" placeholder="예: 십자가, 祈り, 7">
-          <button type="button" class="btn" id="clear" aria-label="검색어 지우기">✕</button>
+          <input type="search" id="search" autocomplete="off" spellcheck="false" placeholder="例：十字架、祈り、7">
+          <button type="button" class="btn" id="clear" aria-label="検索語を消去">消去</button>
         </div>
       </div>
       <p class="count" id="count" aria-live="polite"></p>
       <ol class="list" id="list"></ol>
-      <p class="empty" id="empty" hidden>검색 결과가 없습니다.</p>
+      <p class="empty" id="empty" hidden>該当するエピソードが見つかりませんでした。別のことばで検索してみてください。</p>
     </section>
   </main>
 
   <footer>
-    네트워크 요청, 분석 도구, 외부 리소스, 개인정보 저장을 사용하지 않습니다. 검수 완료 및 공개 승인 전까지 외부 배포 금지.
+    「福音紹介ショート」シリーズ · likeJesusJonas
   </footer>
 </div>
 
@@ -269,16 +269,16 @@
   "use strict";
 
   var episodes = [
-    {"episode": 1, "title_ja": "クリスマス、愛が私たちのもとに", "title_ko": "크리스마스, 사랑이 우리에게 오다", "duration": 63.541667, "summary": "크리스마스는 휴일과 선물, 빨간 장식뿐인 날일까요?", "src": "media/EP01.mp4", "poster": "thumbnails/EP01.jpg"},
-    {"episode": 2, "title_ja": "教会って、どんなところ？", "title_ko": "교회는 어떤 곳일까요?", "duration": 62.916667, "summary": "교회는 그저 건물을 말하는 걸까요?", "src": "media/EP02.mp4", "poster": "thumbnails/EP02.jpg"},
-    {"episode": 3, "title_ja": "イエスとは、どんな方？", "title_ko": "예수님은 어떤 분일까요?", "duration": 70.416667, "summary": "예수님은 그저 좋은 선생님일까요?", "src": "media/EP03.mp4", "poster": "thumbnails/EP03.jpg"},
-    {"episode": 4, "title_ja": "成果で得るのではない愛", "title_ko": "성과로 얻지 않는 사랑", "duration": 67.75, "summary": "잘하지 못해도 사랑받을 가치가 있을까요?", "src": "media/EP04.mp4", "poster": "thumbnails/EP04.jpg"},
-    {"episode": 5, "title_ja": "罪は悪い行いだけではない", "title_ko": "죄는 나쁜 행동만이 아닙니다", "duration": 65.541667, "summary": "'죄'라는 말을 들으면 무엇이 떠오르나요?", "src": "media/EP05.mp4", "poster": "thumbnails/EP05.jpg"},
-    {"episode": 6, "title_ja": "十字架と赦し", "title_ko": "십자가와 용서", "duration": 70.875, "summary": "그리스도인은 왜 십자가를 소중히 여길까요?", "src": "media/EP06.mp4", "poster": "thumbnails/EP06.jpg"},
-    {"episode": 7, "title_ja": "復活がくれる希望", "title_ko": "부활이 주는 소망", "duration": 70.25, "summary": "부활은 그저 마음의 위로일까요?", "src": "media/EP07.mp4", "poster": "thumbnails/EP07.jpg"},
-    {"episode": 8, "title_ja": "祈りはおまじないではない", "title_ko": "기도는 주문이 아닙니다", "duration": 66.75, "summary": "기도는 소원을 여러 번 되풀이하는 것일까요? 아닙니다.", "src": "media/EP08.mp4", "poster": "thumbnails/EP08.jpg"},
-    {"episode": 9, "title_ja": "信じていても、つらいことはある", "title_ko": "믿음이 있어도 어려움은 있습니다", "duration": 73.916667, "summary": "예수님을 믿으면 고통 없는 삶이 될까요?", "src": "media/EP09.mp4", "poster": "thumbnails/EP09.jpg"},
-    {"episode": 10, "title_ja": "イエスを、どこから知っていけばいい？", "title_ko": "예수님을 어디서부터 알아갈까요?", "duration": 75.833333, "summary": "예수님을 알고 싶다면, 어디서 시작하면 될까요?", "src": "media/EP10.mp4", "poster": "thumbnails/EP10.jpg"}
+    {"episode": 1, "title_ja": "クリスマス、愛が私たちのもとに", "duration": 63.541667, "summary": "クリスマスはイエスの誕生を記念する日。飼い葉おけに寝かされたイエスに示された神の愛と、毎日に灯る希望を紹介します。", "src": "media/EP01.mp4", "poster": "thumbnails/EP01.jpg"},
+    {"episode": 2, "title_ja": "教会って、どんなところ？", "duration": 62.916667, "summary": "教会は建物でも完璧な人の集まりでもなく、イエスに従うことを学ぶ人たちの共同体。疑問を抱えたままでも歓迎されることを伝えます。", "src": "media/EP02.mp4", "poster": "thumbnails/EP02.jpg"},
+    {"episode": 3, "title_ja": "イエスとは、どんな方？", "duration": 70.416667, "summary": "クリスチャンが信じる「神の子」「救い主」としてのイエス。その意味と、十字架と復活によって開かれた神との和解の道を紹介します。", "src": "media/EP03.mp4", "poster": "thumbnails/EP03.jpg"},
+    {"episode": 4, "title_ja": "成果で得るのではない愛", "duration": 67.75, "summary": "神の愛は優れた人へのごほうびではありません。弱さを知りながら先に近づいてくださる神の恵みと、新しい生き方への招きを語ります。", "src": "media/EP04.mp4", "poster": "thumbnails/EP04.jpg"},
+    {"episode": 5, "title_ja": "罪は悪い行いだけではない", "duration": 65.541667, "summary": "聖書が語る罪は、悪い行いだけでなく神から離れた心の向きのこと。罪を認めるとは、救いが必要だと正直に認めることです。", "src": "media/EP05.mp4", "poster": "thumbnails/EP05.jpg"},
+    {"episode": 6, "title_ja": "十字架と赦し", "duration": 70.875, "summary": "罪のないイエスが、私たちの罪のために死なれた十字架。そこに示された神の正義と愛、そして赦しと和解について紹介します。", "src": "media/EP06.mp4", "poster": "thumbnails/EP06.jpg"},
+    {"episode": 7, "title_ja": "復活がくれる希望", "duration": 70.25, "summary": "復活は心のなぐさめだけではありません。イエスが本当に死からよみがえったという信仰と、暗闇の中で与えられる希望を伝えます。", "src": "media/EP07.mp4", "poster": "thumbnails/EP07.jpg"},
+    {"episode": 8, "title_ja": "祈りはおまじないではない", "duration": 66.75, "summary": "祈りは願いをかなえるおまじないではなく、神に心を開く誠実な対話。どう始めればよいか分からない方への最初の一歩も紹介します。", "src": "media/EP08.mp4", "poster": "thumbnails/EP08.jpg"},
+    {"episode": 9, "title_ja": "信じていても、つらいことはある", "duration": 73.916667, "summary": "信じていても苦しみがなくなるわけではありません。苦難の中でもイエスを信頼し、一人ではないと知る希望と、助けを求める大切さを語ります。", "src": "media/EP09.mp4", "poster": "thumbnails/EP09.jpg"},
+    {"episode": 10, "title_ja": "イエスを、どこから知っていけばいい？", "duration": 75.833333, "summary": "イエスを知る第一歩として、マルコの福音書などの短い箇所を読むこと、正直に祈ること、教会でゆっくり質問することを紹介します。", "src": "media/EP10.mp4", "poster": "thumbnails/EP10.jpg"}
   ];
   window.episodes = episodes;
 
@@ -293,7 +293,6 @@
   var errEl = document.getElementById("media-err");
   var nowNo = document.getElementById("now-no");
   var nowTitle = document.getElementById("now-title");
-  var nowKo = document.getElementById("now-ko");
   var nowSum = document.getElementById("now-sum");
   var nowMeta = document.getElementById("now-meta");
 
@@ -305,6 +304,11 @@
     var s = Math.round(Number(sec) || 0);
     return Math.floor(s / 60) + ":" + pad2(s % 60);
   }
+  function fmtDurationJa(sec) {
+    var s = Math.round(Number(sec) || 0);
+    return Math.floor(s / 60) + "分" + (s % 60) + "秒";
+  }
+  function epLabel(n) { return "第" + n + "話"; }
   function findIndex(n) {
     for (var i = 0; i < episodes.length; i++) {
       if (episodes[i].episode === n) return i;
@@ -326,7 +330,7 @@
       btn.setAttribute("data-episode", String(ep.episode));
       btn.setAttribute("aria-current", "false");
       btn.setAttribute("aria-label",
-        "EP" + pad2(ep.episode) + " " + ep.title_ko + " (" + fmtDuration(ep.duration) + ")");
+        epLabel(ep.episode) + "「" + ep.title_ja + "」再生時間" + fmtDurationJa(ep.duration) + "。" + ep.summary);
 
       var thumb = el("span", "thumb");
       thumb.setAttribute("aria-hidden", "true");
@@ -343,13 +347,10 @@
 
       var body = el("span", "ep-body");
       var top = el("span", "ep-top");
-      top.appendChild(el("span", "ep-num", "EP " + pad2(ep.episode)));
+      top.appendChild(el("span", "ep-num", epLabel(ep.episode)));
       top.appendChild(el("span", "ep-dur", fmtDuration(ep.duration)));
       body.appendChild(top);
-      var ja = el("span", "ep-ja", ep.title_ja);
-      ja.lang = "ja";
-      body.appendChild(ja);
-      body.appendChild(el("span", "ep-ko", ep.title_ko));
+      body.appendChild(el("span", "ep-ja", ep.title_ja));
       body.appendChild(el("span", "ep-sum", ep.summary));
 
       btn.appendChild(thumb);
@@ -385,12 +386,11 @@
       buttons[k].btn.setAttribute("aria-current", Number(k) === n ? "true" : "false");
     });
 
-    nowNo.textContent = "EP " + pad2(ep.episode) + " / " + episodes.length;
+    nowNo.textContent = epLabel(ep.episode) + "（全" + episodes.length + "話）";
     nowTitle.textContent = ep.title_ja;
-    nowKo.textContent = ep.title_ko;
     nowSum.textContent = ep.summary;
-    nowMeta.textContent = "길이 " + fmtDuration(ep.duration) + " · " + ep.src;
-    player.setAttribute("aria-label", "EP" + pad2(ep.episode) + " " + ep.title_ko);
+    nowMeta.textContent = "再生時間 " + fmtDuration(ep.duration);
+    player.setAttribute("aria-label", epLabel(ep.episode) + "「" + ep.title_ja + "」の動画");
 
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === episodes.length - 1;
@@ -407,9 +407,7 @@
   nextBtn.addEventListener("click", function () { step(1); });
 
   player.addEventListener("error", function () {
-    var ep = episodes[findIndex(current)];
-    errEl.textContent = "영상을 불러오지 못했습니다: " + (ep ? ep.src : "") +
-      " — 이 HTML 파일과 같은 폴더에 media/ 폴더가 있는지 확인하세요.";
+    errEl.textContent = "動画を読み込めませんでした。お手数ですが、ページを再読み込みするか、しばらくしてからもう一度お試しください。";
     errEl.hidden = false;
   });
 
@@ -421,17 +419,17 @@
     var shown = 0;
     episodes.forEach(function (ep) {
       var hay = normalize([
-        ep.title_ja, ep.title_ko, ep.summary,
+        ep.title_ja, ep.summary, epLabel(ep.episode),
         "ep" + ep.episode, "ep" + pad2(ep.episode), String(ep.episode)
       ].join(" "));
       var match = !q || q.split(" ").every(function (t) { return hay.indexOf(t) !== -1; });
-      if (/^\d+$/.test(q)) match = ep.episode === parseInt(q, 10) || hay.indexOf(q) !== -1;
+      if (/^\d+$/.test(q)) match = ep.episode === parseInt(q, 10);
       buttons[ep.episode].li.hidden = !match;
       if (match) shown++;
     });
     countEl.textContent = q
-      ? "검색 결과 " + shown + "편 / 전체 " + episodes.length + "편"
-      : "전체 " + episodes.length + "편";
+      ? "検索結果：" + shown + "話（全" + episodes.length + "話中）"
+      : "全" + episodes.length + "話";
     emptyEl.hidden = shown !== 0;
   }
   search.addEventListener("input", applyFilter);
