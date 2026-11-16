@@ -1,0 +1,48 @@
+name: Publish ten gospel films
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble and verify public films
+        run: |
+          python3 - <<'PYCODE'
+          import pathlib,json,hashlib,shutil
+          r=pathlib.Path('.')
+          m=json.loads((r/'catalog_manifest.json').read_text())
+          out=r/'_site'
+          (out/'media').mkdir(parents=True,exist_ok=True)
+          (out/'thumbnails').mkdir(exist_ok=True)
+          for e in m['episodes']:
+              s='EP%02d'%e['episode']
+              parts=sorted(r.glob(s+'.mp4.part*'))
+              data=b''.join(p.read_bytes() for p in parts)
+              assert hashlib.sha256(data).hexdigest()==e['sha256'],s
+              (out/'media'/(s+'.mp4')).write_bytes(data)
+              shutil.copyfile(r/(s+'.jpg'),out/'thumbnails'/(s+'.jpg'))
+          shutil.copyfile('index.html',out/'index.html')
+          shutil.copyfile('catalog_manifest.json',out/'catalog_manifest.json')
+          (out/'.nojekyll').touch()
+          print('Verified 10 original MP4 files')
+          PYCODE
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
