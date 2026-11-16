@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' file: data:; media-src 'self' file:; connect-src 'none'; font-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>일본어 복음 소개 영상 10편 · 공개 검토용 검토 카탈로그</title>
+<style>
+  :root {
+    --cream: #f6f1e7;
+    --cream-2: #efe7d8;
+    --paper: #fbf8f2;
+    --charcoal: #2a2826;
+    --charcoal-2: #45413d;
+    --muted: #6b645c;
+    --line: #d9cfbe;
+    --accent: #8a5a2b;
+    --focus: #1f5fbf;
+    --warn-bg: #2a2826;
+    --warn-fg: #fbf3df;
+    --radius: 10px;
+    --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Apple SD Gothic Neo", "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans KR", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Malgun Gothic", system-ui, sans-serif;
+    --serif: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  :lang(ja) { word-break: normal; line-break: strict; }
+  .skip {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--charcoal); color: var(--paper);
+    padding: 12px 16px; z-index: 10; min-height: 44px;
+  }
+  .skip:focus { left: 8px; top: 8px; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  .banner {
+    background: var(--warn-bg);
+    color: var(--warn-fg);
+    padding: 12px max(16px, env(safe-area-inset-left));
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    border-bottom: 3px solid var(--accent);
+  }
+  .banner span[aria-hidden] { margin-right: 6px; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  header.masthead {
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  .kicker {
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 4px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4.5vw, 2.3rem);
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sub { margin: 6px 0 0; color: var(--charcoal-2); font-size: 0.95rem; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  @media (min-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+    .stage { position: sticky; top: 16px; }
+  }
+
+  .stage {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+    min-width: 0;
+  }
+  .frame {
+    width: min(100%, calc(65vh * 9 / 16));
+    aspect-ratio: 9 / 16;
+    max-height: 65vh;
+    margin: 0 auto;
+    background: var(--charcoal);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  #player {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    background: var(--charcoal);
+  }
+  .now { margin-top: 14px; min-width: 0; }
+  .now .ep-no { font-size: 0.8rem; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; margin: 0; }
+  .now h2 {
+    font-family: var(--serif);
+    font-size: 1.3rem; line-height: 1.4; margin: 2px 0 0;
+  }
+  .now .ko { margin: 2px 0 0; color: var(--charcoal-2); font-weight: 600; }
+  .now .sum { margin: 8px 0 0; color: var(--charcoal-2); }
+  .now .meta { margin: 6px 0 0; color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+  .media-err {
+    margin: 10px 0 0; padding: 10px 12px; border-radius: 8px;
+    background: #f3e2d6; color: #5a2e14; font-size: 0.9rem;
+  }
+  .media-err[hidden] { display: none; }
+
+  .nav { display: flex; gap: 10px; margin-top: 14px; }
+  .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 14px;
+    font: inherit; font-weight: 700; font-size: 0.95rem;
+    color: var(--paper);
+    background: var(--charcoal);
+    border: 2px solid var(--charcoal);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btn:hover:not(:disabled) { background: var(--charcoal-2); }
+  .btn:disabled { background: transparent; color: var(--muted); border-color: var(--line); cursor: not-allowed; }
+
+  .catalog { min-width: 0; }
+  .search-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .search-row label { font-weight: 700; font-size: 0.9rem; }
+  .search-box { display: flex; gap: 8px; }
+  #search {
+    flex: 1 1 auto; min-width: 0;
+    min-height: 44px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--charcoal);
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: 8px;
+  }
+  #search:focus { border-color: var(--charcoal); }
+  #clear { flex: 0 0 auto; min-width: 44px; }
+  .count { margin: 0 0 10px; color: var(--muted); font-size: 0.88rem; }
+
+  ol.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  ol.list li { min-width: 0; }
+  .ep {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .ep:hover { background: var(--cream-2); }
+  .ep[aria-current="true"] { border-color: var(--charcoal); border-left-color: var(--accent); background: var(--cream-2); }
+  .thumb {
+    width: 72px; aspect-ratio: 9 / 16;
+    background: var(--charcoal);
+    border-radius: 6px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cream); font-weight: 700; font-size: 0.9rem;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ep-body { min-width: 0; display: block; }
+  .ep-top { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .ep-num { font-size: 0.78rem; font-weight: 700; color: var(--accent); letter-spacing: 0.06em; }
+  .ep-dur { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .ep-ja { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.05rem; line-height: 1.4; margin-top: 2px; }
+  .ep-ko { display: block; font-weight: 600; font-size: 0.92rem; color: var(--charcoal-2); }
+  .ep-sum { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+  .empty { padding: 20px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
+  .empty[hidden] { display: none; }
+
+  footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; }
+
+  @media (max-width: 420px) {
+    .wrap { padding: 16px 12px 40px; }
+    .stage { padding: 12px; }
+    .ep { grid-template-columns: 56px minmax(0, 1fr); gap: 10px; }
+    .thumb { width: 56px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body><div style="padding:16px;background:#422b18;color:#fff;text-align:center">공개 검토본 · 직접 청취 및 일본어 원어민 최종 승인은 아직 완료되지 않았습니다. / レビュー用・音声の最終確認は未完了です。</div>
+<a class="skip" href="#catalog">에피소드 목록으로 건너뛰기</a>
+
+<div class="banner" role="note" aria-label="검토 상태 안내">
+  <span aria-hidden="true">⚠</span>공개 검토용 검토용 · 전편 직접 청취 및 일본어 원어민 발음 검수 미완료 · 공개 승인 없음
+</div>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">Private Review · Offline Catalog</p>
+    <h1><span lang="ja">福音紹介ショート</span> · 일본어 복음 소개 영상 10편</h1>
+    <p class="sub">로컬 파일로만 열어 보는 내부 검토 카탈로그입니다. 영상과 썸네일은 이 문서 기준 상대 경로(media/, thumbnails/)에서 불러옵니다.</p>
+  </header>
+
+  <main class="layout">
+    <section class="stage" aria-labelledby="now-title">
+      <div class="frame">
+        <video id="player" controls playsinline preload="metadata"></video>
+      </div>
+      <p class="media-err" id="media-err" role="alert" hidden></p>
+      <div class="now" aria-live="polite">
+        <p class="ep-no" id="now-no"></p>
+        <h2 id="now-title" lang="ja"></h2>
+        <p class="ko" id="now-ko"></p>
+        <p class="sum" id="now-sum"></p>
+        <p class="meta" id="now-meta"></p>
+      </div>
+      <div class="nav">
+        <button type="button" class="btn" id="prev" aria-label="이전 에피소드">← 이전</button>
+        <button type="button" class="btn" id="next" aria-label="다음 에피소드">다음 →</button>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title" tabindex="-1">
+      <h2 id="catalog-title" class="kicker">에피소드 목록</h2>
+      <div class="search-row" role="search">
+        <label for="search">검색 (일본어 · 한국어 제목, 요약, 회차 번호)</label>
+        <div class="search-box">
+          <input type="search" id="search" autocomplete="off" spellcheck="false" placeholder="예: 십자가, 祈り, 7">
+          <button type="button" class="btn" id="clear" aria-label="검색어 지우기">✕</button>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ol class="list" id="list"></ol>
+      <p class="empty" id="empty" hidden>검색 결과가 없습니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    네트워크 요청, 분석 도구, 외부 리소스, 개인정보 저장을 사용하지 않습니다. 검수 완료 및 공개 승인 전까지 외부 배포 금지.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var episodes = [
+    {"episode": 1, "title_ja": "クリスマス、愛が私たちのもとに", "title_ko": "크리스마스, 사랑이 우리에게 오다", "duration": 63.541667, "summary": "크리스마스는 휴일과 선물, 빨간 장식뿐인 날일까요?", "src": "media/EP01.mp4", "poster": "thumbnails/EP01.jpg"},
+    {"episode": 2, "title_ja": "教会って、どんなところ？", "title_ko": "교회는 어떤 곳일까요?", "duration": 62.916667, "summary": "교회는 그저 건물을 말하는 걸까요?", "src": "media/EP02.mp4", "poster": "thumbnails/EP02.jpg"},
+    {"episode": 3, "title_ja": "イエスとは、どんな方？", "title_ko": "예수님은 어떤 분일까요?", "duration": 70.416667, "summary": "예수님은 그저 좋은 선생님일까요?", "src": "media/EP03.mp4", "poster": "thumbnails/EP03.jpg"},
+    {"episode": 4, "title_ja": "成果で得るのではない愛", "title_ko": "성과로 얻지 않는 사랑", "duration": 67.75, "summary": "잘하지 못해도 사랑받을 가치가 있을까요?", "src": "media/EP04.mp4", "poster": "thumbnails/EP04.jpg"},
+    {"episode": 5, "title_ja": "罪は悪い行いだけではない", "title_ko": "죄는 나쁜 행동만이 아닙니다", "duration": 65.541667, "summary": "'죄'라는 말을 들으면 무엇이 떠오르나요?", "src": "media/EP05.mp4", "poster": "thumbnails/EP05.jpg"},
+    {"episode": 6, "title_ja": "十字架と赦し", "title_ko": "십자가와 용서", "duration": 70.875, "summary": "그리스도인은 왜 십자가를 소중히 여길까요?", "src": "media/EP06.mp4", "poster": "thumbnails/EP06.jpg"},
+    {"episode": 7, "title_ja": "復活がくれる希望", "title_ko": "부활이 주는 소망", "duration": 70.25, "summary": "부활은 그저 마음의 위로일까요?", "src": "media/EP07.mp4", "poster": "thumbnails/EP07.jpg"},
+    {"episode": 8, "title_ja": "祈りはおまじないではない", "title_ko": "기도는 주문이 아닙니다", "duration": 66.75, "summary": "기도는 소원을 여러 번 되풀이하는 것일까요? 아닙니다.", "src": "media/EP08.mp4", "poster": "thumbnails/EP08.jpg"},
+    {"episode": 9, "title_ja": "信じていても、つらいことはある", "title_ko": "믿음이 있어도 어려움은 있습니다", "duration": 73.916667, "summary": "예수님을 믿으면 고통 없는 삶이 될까요?", "src": "media/EP09.mp4", "poster": "thumbnails/EP09.jpg"},
+    {"episode": 10, "title_ja": "イエスを、どこから知っていけばいい？", "title_ko": "예수님을 어디서부터 알아갈까요?", "duration": 75.833333, "summary": "예수님을 알고 싶다면, 어디서 시작하면 될까요?", "src": "media/EP10.mp4", "poster": "thumbnails/EP10.jpg"}
+  ];
+  window.episodes = episodes;
+
+  var player = document.getElementById("player");
+  var list = document.getElementById("list");
+  var search = document.getElementById("search");
+  var clearBtn = document.getElementById("clear");
+  var countEl = document.getElementById("count");
+  var emptyEl = document.getElementById("empty");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var errEl = document.getElementById("media-err");
+  var nowNo = document.getElementById("now-no");
+  var nowTitle = document.getElementById("now-title");
+  var nowKo = document.getElementById("now-ko");
+  var nowSum = document.getElementById("now-sum");
+  var nowMeta = document.getElementById("now-meta");
+
+  var current = null;
+  var buttons = {};
+
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function fmtDuration(sec) {
+    var s = Math.round(Number(sec) || 0);
+    return Math.floor(s / 60) + ":" + pad2(s % 60);
+  }
+  function findIndex(n) {
+    for (var i = 0; i < episodes.length; i++) {
+      if (episodes[i].episode === n) return i;
+    }
+    return -1;
+  }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function render() {
+    episodes.forEach(function (ep) {
+      var li = document.createElement("li");
+      var btn = el("button", "ep");
+      btn.type = "button";
+      btn.setAttribute("data-episode", String(ep.episode));
+      btn.setAttribute("aria-current", "false");
+      btn.setAttribute("aria-label",
+        "EP" + pad2(ep.episode) + " " + ep.title_ko + " (" + fmtDuration(ep.duration) + ")");
+
+      var thumb = el("span", "thumb");
+      thumb.setAttribute("aria-hidden", "true");
+      var img = document.createElement("img");
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.src = ep.poster;
+      img.addEventListener("error", function () {
+        img.remove();
+        thumb.textContent = pad2(ep.episode);
+      });
+      thumb.appendChild(img);
+
+      var body = el("span", "ep-body");
+      var top = el("span", "ep-top");
+      top.appendChild(el("span", "ep-num", "EP " + pad2(ep.episode)));
+      top.appendChild(el("span", "ep-dur", fmtDuration(ep.duration)));
+      body.appendChild(top);
+      var ja = el("span", "ep-ja", ep.title_ja);
+      ja.lang = "ja";
+      body.appendChild(ja);
+      body.appendChild(el("span", "ep-ko", ep.title_ko));
+      body.appendChild(el("span", "ep-sum", ep.summary));
+
+      btn.appendChild(thumb);
+      btn.appendChild(body);
+      btn.addEventListener("click", function () {
+        selectEpisode(parseInt(btn.getAttribute("data-episode"), 10));
+      });
+
+      li.appendChild(btn);
+      list.appendChild(li);
+      buttons[ep.episode] = { btn: btn, li: li, ep: ep };
+    });
+  }
+
+  function selectEpisode(n) {
+    if (typeof n === "string" && /^\d+$/.test(n.trim())) n = parseInt(n, 10);
+    if (typeof n !== "number" || !Number.isInteger(n)) return false;
+    var idx = findIndex(n);
+    if (idx < 0) return false;
+    var ep = episodes[idx];
+
+    errEl.hidden = true;
+    errEl.textContent = "";
+    if (!player.paused) player.pause();
+    player.removeAttribute("autoplay");
+    player.autoplay = false;
+    player.poster = ep.poster;
+    player.src = ep.src;
+    player.load();
+
+    current = n;
+    Object.keys(buttons).forEach(function (k) {
+      buttons[k].btn.setAttribute("aria-current", Number(k) === n ? "true" : "false");
+    });
+
+    nowNo.textContent = "EP " + pad2(ep.episode) + " / " + episodes.length;
+    nowTitle.textContent = ep.title_ja;
+    nowKo.textContent = ep.title_ko;
+    nowSum.textContent = ep.summary;
+    nowMeta.textContent = "길이 " + fmtDuration(ep.duration) + " · " + ep.src;
+    player.setAttribute("aria-label", "EP" + pad2(ep.episode) + " " + ep.title_ko);
+
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === episodes.length - 1;
+    return true;
+  }
+  window.selectEpisode = selectEpisode;
+
+  function step(delta) {
+    if (current == null) return;
+    var idx = findIndex(current) + delta;
+    if (idx >= 0 && idx < episodes.length) selectEpisode(episodes[idx].episode);
+  }
+  prevBtn.addEventListener("click", function () { step(-1); });
+  nextBtn.addEventListener("click", function () { step(1); });
+
+  player.addEventListener("error", function () {
+    var ep = episodes[findIndex(current)];
+    errEl.textContent = "영상을 불러오지 못했습니다: " + (ep ? ep.src : "") +
+      " — 이 HTML 파일과 같은 폴더에 media/ 폴더가 있는지 확인하세요.";
+    errEl.hidden = false;
+  });
+
+  function normalize(s) {
+    return String(s).toLowerCase().normalize("NFKC").replace(/\s+/g, " ").trim();
+  }
+  function applyFilter() {
+    var q = normalize(search.value);
+    var shown = 0;
+    episodes.forEach(function (ep) {
+      var hay = normalize([
+        ep.title_ja, ep.title_ko, ep.summary,
+        "ep" + ep.episode, "ep" + pad2(ep.episode), String(ep.episode)
+      ].join(" "));
+      var match = !q || q.split(" ").every(function (t) { return hay.indexOf(t) !== -1; });
+      if (/^\d+$/.test(q)) match = ep.episode === parseInt(q, 10) || hay.indexOf(q) !== -1;
+      buttons[ep.episode].li.hidden = !match;
+      if (match) shown++;
+    });
+    countEl.textContent = q
+      ? "검색 결과 " + shown + "편 / 전체 " + episodes.length + "편"
+      : "전체 " + episodes.length + "편";
+    emptyEl.hidden = shown !== 0;
+  }
+  search.addEventListener("input", applyFilter);
+  clearBtn.addEventListener("click", function () {
+    search.value = "";
+    applyFilter();
+    search.focus();
+  });
+
+  render();
+  applyFilter();
+  selectEpisode(1);
+})();
+</script>
+</body>
+</html>
